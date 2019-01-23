@@ -1,0 +1,13 @@
+{
+    "name": "jankx/admin",
+    "description": "The Jankx admin framework is a partial of Jankx theme framework",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Puleeno Nguyen",
+            "email": "puleeno@gmail.com"
+        }
+    ],
+    "require": {}
+}

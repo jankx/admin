@@ -1,6 +1,8 @@
 <?php
 namespace Jankx\Admin;
 
-class Admin {
-
+class Admin
+{
+	public function __construct(){
+	}
 }

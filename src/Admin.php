@@ -7,6 +7,13 @@ class Admin
     {
         add_action('init', array($this, 'init'));
     }
+    
+    private function define($name, $value)
+    {
+        if (!defined($name)) {
+            define($name, $value);
+        }
+    }
 
     public function init()
     {

@@ -10,7 +10,9 @@
       "email": "puleeno@gmail.com"
     }
   ],
-  "require": {},
+  "require": {
+    "jankx/option": "dev-master"
+  },
   "autoload": {
     "psr-4": {
       "Jankx\\Admin\\": "src/"

@@ -5,9 +5,9 @@ class Admin
 {
     public function __construct()
     {
-        add_action('init', array($this, 'init'));
+        add_action('admin_init', array($this, 'init'));
     }
-    
+
     private function define($name, $value)
     {
         if (!defined($name)) {

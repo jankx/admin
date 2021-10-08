@@ -31,7 +31,9 @@ class Admin
         );
 
         $option_framework = Framework::getActiveFramework();
-        $option_framework->register_admin_menu($menu_title, $display_name);
+        if ($option_framework) {
+            $option_framework->register_admin_menu($menu_title, $display_name);
+        }
     }
 
     public function init()

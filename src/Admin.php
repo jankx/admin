@@ -3,20 +3,16 @@ namespace Jankx\Admin;
 
 use Jankx\GlobalVariables;
 use Jankx\Option\Framework;
+use Jankx\Option\OptionsReader;
 
 class Admin
 {
+    protected $optionFramework;
+
     public function __construct()
     {
-        add_action('after_setup_theme', array($this, 'setup_admin'), 16);
-        add_action('admin_init', array($this, 'init'));
-    }
-
-    private function define($name, $value)
-    {
-        if (!defined($name)) {
-            define($name, $value);
-        }
+        add_action('after_setup_theme', array($this, 'setup_admin'), 15);
+        add_action('after_setup_theme', array($this, 'init_theme_options'), 30);
     }
 
     public function setup_admin()
@@ -30,13 +26,19 @@ class Admin
             GlobalVariables::get('theme.name')
         );
 
-        $option_framework = Framework::getActiveFramework();
-        if ($option_framework) {
-            $option_framework->register_admin_menu($menu_title, $display_name);
+        $this->optionFramework = Framework::getActiveFramework();
+        if ($this->optionFramework) {
+            $this->optionFramework->register_admin_menu($menu_title, $display_name);
         }
     }
 
-    public function init()
+    public function init_theme_options()
     {
+        // Setup theme options
+        if ($this->optionFramework) {
+            $optionReaders = new OptionsReader();
+            $options = $optionReaders->readAllOptions();
+            $this->optionFramework->createSections($options);
+        }
     }
 }

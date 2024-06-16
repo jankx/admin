@@ -1,7 +1,7 @@
 <?php
 namespace Jankx\Admin;
 
-use Jankx\GlobalVariables;
+use Jankx\GlobalConfigs;
 use Jankx\Option\Framework;
 use Jankx\Option\OptionsReader;
 
@@ -19,11 +19,11 @@ class Admin
     {
         $menu_title = apply_filters(
             'jankx_admin_menu_title',
-            sprintf('%s %s', GlobalVariables::get('theme.short_name'), __('Options', 'jankx'))
+            sprintf('%s %s', GlobalConfigs::get('theme.short_name'), __('Options', 'jankx'))
         );
         $display_name = apply_filters(
             'jankx_admin_menu_display_name',
-            GlobalVariables::get('theme.name')
+            GlobalConfigs::get('theme.name')
         );
 
         $this->optionFramework = Framework::getActiveFramework();

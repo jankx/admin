@@ -11,7 +11,7 @@
     }
   ],
   "require": {
-    "jankx/option": "dev-master"
+    "jankx/option": "*"
   },
   "autoload": {
     "psr-4": {

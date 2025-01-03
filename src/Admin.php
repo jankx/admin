@@ -3,8 +3,8 @@
 namespace Jankx\Admin;
 
 use Jankx\GlobalConfigs;
-use Jankx\Option\Framework;
-use Jankx\Option\OptionsReader;
+use Jankx\Adapter\Options\Framework;
+use Jankx\Adapter\Options\OptionsReader;
 
 class Admin
 {

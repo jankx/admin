@@ -8,6 +8,9 @@ use Jankx\Adapter\Options\OptionsReader;
 
 class Admin
 {
+    /**
+     * @var \Jankx\Adapter\Options\Interfaces\Adapter
+     */
     protected $optionFramework;
 
     public function __construct()

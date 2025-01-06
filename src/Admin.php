@@ -43,9 +43,7 @@ class Admin
     {
         // Setup theme options
         if ($this->optionFramework) {
-            $optionReaders = new OptionsReader();
-            $options = $optionReaders->readAllOptions();
-            $this->optionFramework->createSections($options);
+            $this->optionFramework->createSections(OptionsReader::getInstance());
         }
     }
 

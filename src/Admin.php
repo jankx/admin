@@ -24,7 +24,7 @@ class Admin
         $shortName = GlobalConfigs::get('theme.shortName');
         $menu_title = apply_filters(
             'jankx_admin_menu_title',
-            strlen($shortName) > 8 ? $shortName : sprintf('%s %s', $shortName, __('Options', 'jankx'))
+            strlen($shortName) >= 8 ? $shortName : sprintf('%s %s', $shortName, __('Options', 'jankx'))
         );
         $display_name = apply_filters(
             'jankx_admin_menu_display_name',
